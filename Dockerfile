@@ -8,7 +8,6 @@ RUN apt-get install -y --no-install-recommends \
 RUN mkdir -p /etc/OpenCL/vendors && \
     echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
 
-
 WORKDIR /tmp
 ADD https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1_amd64.deb fahclient.deb
 RUN mkdir -p /usr/share/doc/fahclient
@@ -17,5 +16,4 @@ RUN apt-get -y install ./fahclient.deb
 
 WORKDIR /FAHClient
 ADD config.xml config.xml
-
 ENTRYPOINT ["/usr/bin/FAHClient"]

@@ -16,4 +16,5 @@ RUN apt-get -y install ./fahclient.deb
 
 WORKDIR /FAHClient
 ADD config.xml config.xml
+
 ENTRYPOINT ["/usr/bin/FAHClient"]
